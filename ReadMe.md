@@ -25,10 +25,11 @@ A IBM Cloud foi a plataforma selecionada para executar a aplicação de busca co
 
 ![Figura2](./docs/figura2.png)
 
-### Serviços IBM Watson
+### Serviços IBM Cloud
 
 *	Watson Discovery Service: responsável por indexar o conteúdo e implementar a busca inteligente.
 *	Watson Knowledge Studio: utilizado pelo especialista para treinar um modelo customizado.
+* Cloudant NoSQL: database utilizado para controle do processo de transcrição
 
 ### Serviços Google Cloud
 
