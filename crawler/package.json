@@ -1,0 +1,25 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "description": "programa obter a lista de videos do youtube, extrair o audio, gerar a transcricao e mandar para o wds.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js | bunyan",
+    "dev": "node --trace-sync-io index.js",
+    "reset": "node ./util/reset.js | bunyan",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paulo Lacerda",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/speech": "1.1.0",
+    "@google-cloud/storage": "1.5.2",
+    "bunyan": "1.8.12",
+    "cloudant": "1.10.0",
+    "dotenv": "5.0.0",
+    "fluent-ffmpeg": "2.1.2",
+    "googleapis": "25.0.0",
+    "watson-developer-cloud": "3.0.6",
+    "ytdl-core": "0.20.1"
+  }
+}

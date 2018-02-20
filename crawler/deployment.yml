@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: videocrawler-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: videocrawler-pod
+      labels:
+        run: videocrawler
+    spec:
+      containers:
+        - name: videocrawler-container
+          image: "registry.eu-gb.bluemix.net/placerdabluehack/videocrawler:latest"
+          imagePullPolicy: Always
