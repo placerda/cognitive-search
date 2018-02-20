@@ -50,7 +50,7 @@ class App extends Component {
         return (
             <div>
                 <PageHeader>
-                  Busca Cognitiva <small> <a href="https://github.com/placerda/buscacognitiva">https://github.com/placerda/buscacognitiva</a> </small>
+                  Busca Cognitiva <small> <a href="https://github.com/placerda/busca-cognitiva">https://github.com/placerda/busca-cognitiva</a> </small>
                 </PageHeader>
                 <SearchBar onSearchTermChange={videoSearch} />
                 <VideoDetail video={this.state.selectedVideo} estado={this.state.estado}/>

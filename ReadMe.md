@@ -15,7 +15,7 @@ Para exemplificar a aplicação foi criada uma playlist no YouTube: [clique para
 
 Para fazer a consulta, o usuário inicialmente seleciona o tipo de entidade e em seguida informa o texto de pesquisa, na sequência a aplicação irá listar um conjunto de vídeos retornados na busca com base no texto e filtro informados pelo usuário, como exemplificado no wireframe abaixo:
 
-![Figura1](./docs/figura1.png)
+<img src="./docs/figura1.png" width="50%">
 
 Neste link ([clique para abrir](https://buscacognitiva.mybluemix.net)) você pode acessar uma instância da aplicação que faz a busca nos áudios dos vídeos da playlist indicada acima.
 
