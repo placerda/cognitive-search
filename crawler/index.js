@@ -174,39 +174,39 @@ async function main(){
         if (processedItems.find(video => video._id === item._id) === undefined){
           newItems.push(item);
           // insere no db para controle dos itens processados
-           // await saveProcessedVideo(item);
+           await saveProcessedVideo(item);
         }
     }
     log.info(newItems);
 
-     // // processa cada item novo
-     // for (let item of newItems){
-     //      log.info(item._id, ":: processamento iniciado");
-     //
-     //      // extrai o áudio e manda para o object storage
-     //      await extractAudio(item._id);
-     //
-     //      // realiza transcrição com o stt
-     //      let stt_result = await transcribe(item._id);
-     //
-     //      if (stt_result){
-     //         let transcricao = stt_result.results[0].alternatives[0].transcript;
-     //         // log.info(item._id, ":: transcrição:",transcricao);
-     //         item.text = transcricao
-     //         // envia para o discovery
-     //         let discovery_doc = await uploadToDiscovery(item);
-     //
-     //         // atualiza db para controle dos itens processados
-     //         if (discovery_doc.document_id != undefined){
-     //           item.discovery_id = discovery_doc.document_id;
-     //           await saveProcessedVideo(item);
-     //         }
-     //       }
-     // }
+     // processa cada item novo
+     for (let item of newItems){
+          log.info(item._id, ":: processamento iniciado");
+
+          // extrai o áudio e manda para o object storage
+          await extractAudio(item._id);
+
+          // realiza transcrição com o stt
+          let stt_result = await transcribe(item._id);
+
+          if (stt_result){
+             let transcricao = stt_result.results[0].alternatives[0].transcript;
+             // log.info(item._id, ":: transcrição:",transcricao);
+             item.text = transcricao
+             // envia para o discovery
+             let discovery_doc = await uploadToDiscovery(item);
+
+             // atualiza db para controle dos itens processados
+             if (discovery_doc.document_id != undefined){
+               item.discovery_id = discovery_doc.document_id;
+               await saveProcessedVideo(item);
+             }
+           }
+     }
 
    } catch(err) {
      log.error(err);
    }
 }
-main();
-// setInterval(main, process.env.LOOP_INTERVAL);
+
+setInterval(main, process.env.LOOP_INTERVAL);
