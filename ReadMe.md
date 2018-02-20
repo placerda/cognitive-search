@@ -25,11 +25,15 @@ A IBM Cloud foi a plataforma selecionada para executar a aplicação de busca co
 
 ![Figura2](./docs/figura2.png)
 
-### Serviços IBM Watson utilizados
+### Serviços IBM Watson
 
 *	Watson Discovery Service: responsável por indexar o conteúdo e implementar a busca inteligente.
 *	Watson Knowledge Studio: utilizado pelo especialista para treinar um modelo customizado.
+
+### Serviços Google Cloud
+
 *	Speech to Text: componente responsável pela transcrição dos áudios.
+
 
 ### Principais Componentes da Aplicação
 
