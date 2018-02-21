@@ -25,11 +25,11 @@ class App extends Component {
       const parameters = {  method: 'POST',
                             headers: {
                               'Accept': 'application/json',
-                              'Content-Type': 'application/json',
+                              'Content-Type': 'application/json'
                             },
                             body: JSON.stringify({
                               text: term,
-                              type: type,
+                              type: type
                             })
                           };
       fetch(BACKEND_ENDPOINT, parameters)

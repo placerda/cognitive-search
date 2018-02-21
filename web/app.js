@@ -11,6 +11,11 @@ let cfenv = require('cfenv');
 // create a new express server
 let app = express();
 app.use(bodyParser.json()); // support json encoded bodies
+app.use(function(req, res, next) { //CORS support
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // serve the files out of ./public as our main files
@@ -37,7 +42,7 @@ discoveryRouter.post('/', function(req, res) {
                 collection +'/query?version=2017-11-07&highlight=false&passages=false&query=enriched_text.entities%3A%3A%28text%3A%3A%22' +
                 encodeURIComponent(text) +'%22%2Ctype%3A%3A%22' +
                 type +'%22%29' +
-                '&return=etag,snippet';                
+                '&return=etag,snippet';
     request(url, { json: true }, (err, response, body) => {
                if (err) {
                  log.error(err);
