@@ -17,7 +17,7 @@ Para fazer a consulta, o usuário inicialmente seleciona o tipo de entidade e em
 
 <img src="./docs/figura1.png" width="50%" style="display: block;margin-left: auto;margin-right: auto;">
 
-Neste link ([clique para abrir](https://buscacognitiva.mybluemix.net)) você pode acessar uma instância da aplicação que faz a busca nos vídeos da playlist indicada acima.
+<!-- Neste link ([clique para abrir](https://buscacognitiva.mybluemix.net)) você pode acessar uma instância da aplicação que faz a busca nos vídeos da playlist indicada acima. -->
 
 ## Arquitetura
 
